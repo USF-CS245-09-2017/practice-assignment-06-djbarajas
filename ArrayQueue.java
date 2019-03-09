@@ -43,10 +43,11 @@ public class ArrayQueue<T> implements Queue<T> {
 
         for(int i = head, j = 0; i < totalItems;i++,j++){
             temp[j] = arr[i%arr.length];
-
         }
+        temp[0] = arr[head];
+        arr = temp;
         head = 0;
         tail = totalItems;
-        arr = temp;
+
     }
 }
