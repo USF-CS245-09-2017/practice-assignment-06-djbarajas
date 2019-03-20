@@ -77,10 +77,12 @@ public class ArrayQueue<T> implements Queue<T> {
     protected void grow_array() { //O(1) = O(n)/n
         T[] temp =(T[]) new Object[arr.length*2];
 
-        for(int i = head, j = 0; i < totalItems;i++,j++){
-            temp[j] = arr[head%arr.length];
+        for(int i = head, j = 0; j < totalItems;i++,j++){
+            temp[j] = arr[i%arr.length];
+
+
         }
-        temp[0] = arr[head];
+
         arr = temp;
         head = 0;
         tail = totalItems;
